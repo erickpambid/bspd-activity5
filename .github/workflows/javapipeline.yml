@@ -23,6 +23,9 @@ jobs:
             distribution: "temurin"
             java-version: "21"
         
+        - name: Grant execute permission to mvnw
+          run: chmod +x mvnw
+       
         - name: build jar file
           run: |
             ./mvnw clean package
