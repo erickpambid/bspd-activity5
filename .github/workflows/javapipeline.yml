@@ -4,7 +4,7 @@ name: java spring app sample workflow
 on:
     push:
         branches: ["master","main"]
-    pulll_request:
+    pull_request:
         branches: ["master","main"]
     workflow_dispatch:
 
