@@ -1,0 +1,33 @@
+name: java spring app sample workflow
+
+# triggers
+on:
+  push:
+    branches: ["master","main"]
+  pulll_request:
+    branches: ["master","main"]
+  workflow_dispatch:
+
+# actions
+jobs:
+    build:
+        runs-on: ubuntu:latest
+
+        steps:
+        - name: checkout repository
+          uses: actions/checkout@4
+
+        - name: setup jdk 21
+          uses: actions/setup-java@v3
+          with: 
+            distribution: "temuri"
+            version: "21"
+        
+        - name: build jar file
+          run: |
+            ./mvnw clean package
+
+        - name: login to docker hub
+          
+
+        
